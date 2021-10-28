@@ -1,7 +1,7 @@
 #pragma once
 #include "Character.h"
-class Weapon //:
-    //private Character
+class Weapon :
+    public Character
 {
 private:
 	string type;   /*Тип оружия*/

@@ -3,6 +3,7 @@
 #include <windows.h>
 #include "Character.h"
 #include "Weapon.h"
+#include "Armor.h"
 
 using namespace std;
 
@@ -12,15 +13,15 @@ Character Character::char_1(string a, int b, string c, string a1, int b1, string
 	ch.name = a;
 	ch.lvl = b;
 	ch.race = c;
-	//Armor::arm_1(a1, b1, c1, d1);
+	ch.arm = Armor::arm_1(a1, b1, c1, d1);
 	ch.weap = Weapon::weap_1(a2, b2, c2);
 	stat = stat_1(a3, b3, c3, d3, e3, a31, b31, c31);
 	return ch;
 }
 
-void Character::SetChar() /*Создание персонажа вручную с консоли*/
+Character Character::SetChar() /*Создание персонажа вручную с консоли*/
 {
-	//character ch = {};
+	Character ch = {};
 	cout << "Введите имя персонажа" << endl;
 	cin >> name;
 	cout << "Введите уровень персонажа" << endl;
@@ -30,10 +31,10 @@ void Character::SetChar() /*Создание персонажа вручную с консоли*/
 	arm = SetArm();
 	weap = SetWeap();
 	stat = SetStats();
-	//return ch;
+	return ch;
 }
 
-void Character::GetChar() /*Вывод информации о персонаже*/
+void Character::GetChar(Character b) /*Вывод информации о персонаже*/
 {
 	cout << "Персонаж: ";
 	cout << name << endl;
