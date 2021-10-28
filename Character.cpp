@@ -15,7 +15,7 @@ Character Character::char_1(string a, int b, string c, string a1, int b1, string
 	ch.race = c;
 	ch.arm = Armor::arm_1(a1, b1, c1, d1);
 	ch.weap = Weapon::weap_1(a2, b2, c2);
-	stat = stat_1(a3, b3, c3, d3, e3, a31, b31, c31);
+	ch.stat = Stats::stat_1(a3, b3, c3, d3, e3, a31, b31, c31);
 	return ch;
 }
 
@@ -28,7 +28,7 @@ Character Character::SetChar() /*Создание персонажа вручную с консоли*/
 	cin >> lvl;
 	cout << "Введите расу персонажа" << endl;
 	cin >> race;
-	arm = SetArm();
+	ch.arm = Armor::SetArm();
 	weap = SetWeap();
 	stat = SetStats();
 	return ch;
@@ -42,7 +42,7 @@ void Character::GetChar(Character b) /*Вывод информации о персонаже*/
 	cout << lvl << endl;
 	cout << "Раса - ";
 	cout << race << endl;
-	GetArm();
+	Armor::GetArm();
 	GetWeap();
 	GetStats();
 }

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <windows.h>
-//#include "Resistance.h"
+#include "Resistance.h"
 #include "Weapon.h"
 #include "Armor.h"
 

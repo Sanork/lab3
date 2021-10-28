@@ -2,7 +2,7 @@
 #include "Character.h"
 #include <string>
 #include <windows.h>
-//#include "Resistance.h"
+#include "Resistance.h"
 
 using namespace std;
 
@@ -15,7 +15,7 @@ private:
 	int durability; /*Стойкость*/
 	int hp; /*Очки здоровья*/
 	int energy; /*Очки энергии*/
-	//resistance res; /*Структура сопротивлений*/
+	Resistance res; /*Структура сопротивлений*/
 public:
 	Stats stat_1(int a, int b, int c, int d, int e, int a1, int b1, int c1); /*Создание*/
 	Stats SetStats(); /*Создание вручную*/
