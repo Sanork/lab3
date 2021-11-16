@@ -19,6 +19,7 @@ Armor Armor::InitArmor(string armorMaterial, int armorWeight, string armorClass,
 
 Armor Armor::InputArmor() /*Функция создания брони вручную с консоли*/
 {
+	//setlocale(LC_ALL, "Russian");
 	Armor ar = {};
 	cout << "Введите материал брони" << endl;
 	cin >> ar.material;

@@ -1,13 +1,14 @@
 #pragma once
-#include "Character.h"
+//#include "Character.h"
 #include <string>
 #include <windows.h>
 #include "Resistance.h"
 
 using namespace std;
 
-class Stats :
-    private Character
+class Stats //:
+    //protected 
+	//Character
 {
 private:
 	int atack; /*Атака*/

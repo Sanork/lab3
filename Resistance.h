@@ -1,12 +1,12 @@
 #pragma once
-#include "Stats.h"
+//#include "Stats.h"
 #include <string>
 #include <windows.h>
 
 using namespace std;
 
-class Resistance :
-    public Stats //!
+class Resistance //: //Stats
+    //public Stats //!
 {
 private:
 	int poison_res;  /*Сопротивление яду*/

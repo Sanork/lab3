@@ -1,8 +1,10 @@
 #pragma once
-#include "Character.h"
+#include <string>
+#include <windows.h>
 
-class Weapon :
-    public Character
+using namespace std;
+
+class Weapon 
 {
 private:
 	string type;   /*Тип оружия*/

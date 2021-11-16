@@ -2,10 +2,11 @@
 #include <string>
 #include <windows.h>
 
+
 using namespace std;
 
-class Armor:
-	public Character
+class Armor//:
+	//private Character
 {
 private:
 	string material;  /*Материал брони*/

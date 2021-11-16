@@ -148,6 +148,7 @@
   <ItemGroup>
     <ClCompile Include="Armor.cpp" />
     <ClCompile Include="Character.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Resistance.cpp" />
     <ClCompile Include="Stats.cpp" />
     <ClCompile Include="Weapon.cpp" />

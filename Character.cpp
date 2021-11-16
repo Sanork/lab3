@@ -24,11 +24,11 @@ Character Character::InputCharacter(Armor a, Weapon w, Stats s, Resistance r) /*
 {
 	Character ch = {};
 	cout << "¬ведите им€ персонажа" << endl;
-	cin >> name;
+	cin >> ch.name;
 	cout << "¬ведите уровень персонажа" << endl;
-	cin >> lvl;
+	cin >> ch.lvl;
 	cout << "¬ведите расу персонажа" << endl;
-	cin >> race;
+	cin >> ch.race;
 	ch.arm = a.InputArmor();
 	ch.weap = w.InputWeapon();
 	ch.stat = s.InputStats(r);
@@ -46,4 +46,12 @@ void Character::PrintCharacter(Character ch, Armor a, Weapon w, Stats s, Resista
 	a.PrintArmor(ch.arm);
 	w.PrintWeapon(ch.weap);
 	s.PrintStats(ch.stat, r);
+}
+
+Character Character::Refresh(Character ch, Armor a, Weapon w)
+{
+
+	ch.arm = a;
+	ch.weap = w;
+	return ch;
 }
