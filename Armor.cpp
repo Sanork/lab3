@@ -7,17 +7,17 @@
 
 using namespace std;
 
-Armor Armor::arm_1(string a, int b, string c, int d) /*Функция создания брони*/
+Armor Armor::InitArmor(string armorMaterial, int armorWeight, string armorClass, int armorDefence) /*Функция создания брони*/
 {
 	Armor ar = {};
-	ar.material = a;
-	ar.weight = b;
-	ar.w_class = c;
-	ar.defense = d;
+	ar.material = armorMaterial;
+	ar.weight = armorWeight;
+	ar.w_class = armorClass;
+	ar.defense = armorDefence;
 	return ar;
 }
 
-Armor Armor::SetArm() /*Функция создания брони вручную с консоли*/
+Armor Armor::InputArmor() /*Функция создания брони вручную с консоли*/
 {
 	Armor ar = {};
 	cout << "Введите материал брони" << endl;
@@ -31,7 +31,7 @@ Armor Armor::SetArm() /*Функция создания брони вручную с консоли*/
 	return ar;
 }
 
-void Armor::GetArm(Armor ar) /*Функция вывода информации о броне*/
+void Armor::PrintArmor(Armor ar) /*Функция вывода информации о броне*/
 {
 	cout << endl << "Броня: " << endl;
 	cout << "Материал брони - ";
@@ -44,7 +44,7 @@ void Armor::GetArm(Armor ar) /*Функция вывода информации о броне*/
 	cout << ar.defense << endl;
 }
 
-Armor Armor::BreakArm(Armor ar)  /*Функция поломки брони*/
+Armor Armor::BreakArmor(Armor ar)  /*Функция поломки брони*/
 {
 	ar.defense = ar.defense / 10;
 	return (ar);

@@ -2,22 +2,23 @@
 #include <string>
 #include <windows.h>
 #include "Stats.h"
+#include "Resistance.h"
 
 using namespace std;
 
-Stats Stats::stat_1(int a, int b, int c, int d, int e, int a1, int b1, int c1) /*Содание*/
+Stats Stats::InitStats(int statAtack, int statAgility, int statDurability, int statHP, int statEnergy, Resistance res) /*Содание*/
 {
 	Stats s;
-	s.res = res_1(a1, b1, c1);
-	s.atack = a;
-	s.agility = b;
-	s.durability = c;
-	s.hp = d;
-	s.energy = e;
+	s.res = res; //InitResistance(a1, b1, c1);
+	s.atack = statAtack;
+	s.agility = statAgility;
+	s.durability = statDurability;
+	s.hp = statHP;
+	s.energy = statEnergy;
 	return s;
 }
 
-Stats Stats::SetStats() /*Создание вручную*/
+Stats Stats::InputStats(Resistance r) /*Создание вручную*/
 {
 	Stats s = {};
 	cout << "Введите показатель атаки" << endl;
@@ -30,11 +31,11 @@ Stats Stats::SetStats() /*Создание вручную*/
 	cin >> s.hp;
 	cout << "Введите количество очков энергии" << endl;
 	cin >> s.energy;
-	s.res = SetRes();
+	s.res = r.InputResistance();
 	return s;
 }
 
-void Stats::GetStats(Stats s) /*Вывод информации*/
+void Stats::PrintStats(Stats s, Resistance r) /*Вывод информации*/
 {
 	cout << endl << "Характеристики:" << endl;
 	cout << "Атака - ";
@@ -47,5 +48,5 @@ void Stats::GetStats(Stats s) /*Вывод информации*/
 	cout << s.hp << endl;
 	cout << "Энергия - ";
 	cout << s.energy << endl;
-	GetRes(s.res);
+	r.PrintResistance(s.res);
 }

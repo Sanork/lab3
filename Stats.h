@@ -17,8 +17,8 @@ private:
 	int energy; /*Очки энергии*/
 	Resistance res; /*Структура сопротивлений*/
 public:
-	Stats stat_1(int a, int b, int c, int d, int e, int a1, int b1, int c1); /*Создание*/
-	Stats SetStats(); /*Создание вручную*/
-	void GetStats(Stats s); /*Вывод информации*/
+	Stats InitStats(int statAtack, int statAgility, int statDurability, int statHP, int statEnergy, Resistance res); /*Создание*/
+	Stats InputStats(Resistance r); /*Создание вручную*/
+	void PrintStats(Stats s, Resistance r); /*Вывод информации*/
 };
 

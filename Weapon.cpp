@@ -5,40 +5,40 @@
 
 using namespace std;
 
-Weapon Weapon::weap_1(string a, int b, int c) /*Функция создания оружия*/
+Weapon Weapon::InitWeapon(string weaponType, int weaponWeight, int weaponDamage) /*Функция создания оружия*/
 {
 	Weapon w;
-	w.type = a;
-	w.weight = b;
-	w.damage = c;
+	w.type = weaponType;
+	w.weight = weaponWeight;
+	w.damage = weaponDamage;
 	return w;
 }
 
-Weapon Weapon::SetWeap()   /*Функция создания оружия вручную с консоли*/
+Weapon Weapon::InputWeapon()   /*Функция создания оружия вручную с консоли*/
 {
 	Weapon w = {};
 	cout << "Введите тип оружия" << endl;
-	cin >> type;
+	cin >> w.type;
 	cout << "Введите вес оружия" << endl;
-	cin >> weight;
+	cin >> w.weight;
 	cout << "Введите урон оружия" << endl;
-	cin >> damage;
+	cin >> w.damage;
 	return w;
 }
 
-void Weapon::GetWeap()   /*Функция вывода информации об орижии*/
+void Weapon::PrintWeapon(Weapon w)  /*Функция вывода информации об орижии*/
 {
 	cout << endl << "Оружие: " << endl;
 	cout << "Тип оружия - ";
-	cout << type << endl;
+	cout << w.type << endl;
 	cout << "Вес оружия - ";
-	cout << weight << endl;
+	cout << w.weight << endl;
 	cout << "Урон оружия - ";
-	cout << damage << endl;
+	cout << w.damage << endl;
 }
 
-Weapon Weapon::BreakWeap(Weapon w)   /*Функция поломки оружия*/
+Weapon Weapon::BreakWeapon(Weapon w)   /*Функция поломки оружия*/
 {
-	damage = damage / 10;
+	w.damage = w.damage / 10;
 	return (w);
 }

@@ -13,9 +13,9 @@ private:
 	string w_class;    /*Класс брони*/
 	int defense;   /*Защита брони*/
 public:
-	Armor arm_1(string a, int b, string c, int d); /*Функция создания брони*/
-	Armor SetArm(); /*Функция создания брони вручную с консоли*/
-	void GetArm(Armor ar); /*Функция вывода информации о броне*/
-	Armor BreakArm(Armor ar); /*Функция поломки брони*/
+	Armor InitArmor(string armorMaterial, int armorWeight, string armorClass, int armorDefence); /*Функция создания брони*/
+	Armor InputArmor(); /*Функция создания брони вручную с консоли*/
+	void PrintArmor(Armor ar); /*Функция вывода информации о броне*/
+	Armor BreakArmor(Armor ar); /*Функция поломки брони*/
 };
 

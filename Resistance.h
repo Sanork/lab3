@@ -6,15 +6,15 @@
 using namespace std;
 
 class Resistance :
-    private Stats
+    public Stats //!
 {
 private:
 	int poison_res;  /*Сопротивление яду*/
 	int fire_res;    /*Сопротивление огню*/
 	int frost_res;   /*Сопротивление холоду*/
 public:
-	Resistance res_1(int a, int b, int c);   /*Создание*/
-	Resistance SetRes();   /*Создание вручную*/
-	void GetRes(Resistance b);  /*Получение информации*/
+	Resistance InitResistance(int resistancePoison, int resistanceFire, int resistanceFrost);   /*Создание*/
+	Resistance InputResistance();   /*Создание вручную*/
+	void PrintResistance(Resistance r);  /*Получение информации*/
 };
 
