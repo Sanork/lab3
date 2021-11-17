@@ -8,11 +8,15 @@
 #include <string>
 #include <stdio.h>
 #include <windows.h>
+#include <clocale>
+
 
 
 int main()
 {
-	setlocale(LC_ALL, "Russian");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	setlocale(LC_ALL, "Rus");
 	cout << "Пример созданного персонажа" << endl;
 	Character exm;
 	Armor a;
@@ -47,14 +51,16 @@ int main()
 
 				a = a.BreakArmor(a); /*Поломка брони*/
 				system("cls");
-				//exm.Refresh(exm, a, w);
+				//exm = exm.Refresh(exm, a, w);
+				exm = exm.BreakCharacterArmor(exm);
 				exm.PrintCharacter(exm, a, w, s, r);
 			}
 			if (q == 2)
 			{
 				w = w.BreakWeapon(w); /*Поломка оружия*/
 				system("cls");
-				//exm.Refresh(exm, a, w);
+				exm = exm.BreakCharacterWeapon(exm);
+				//exm = exm.Refresh(exm, a, w);
 				exm.PrintCharacter(exm, a, w, s, r);
 			}
 		}
@@ -77,6 +83,7 @@ int main()
 				Character ch;
 				ch = ch.InputCharacter(a,w,s,r); /*Создание персонажа вручную*/
 				exm = ch;
+				system("cls");
 				break;
 			}
 			if (n == 1)

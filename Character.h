@@ -23,5 +23,7 @@ public:
 	Character InputCharacter(Armor a, Weapon w, Stats s, Resistance r); /*Создание персонажа вручную с консоли*/
 	void PrintCharacter(Character ch, Armor a, Weapon w, Stats s, Resistance r); /*Вывод информации о персонаже*/
 	Character Refresh(Character ch, Armor a, Weapon w);
+	Character BreakCharacterWeapon(Character ch);  /*Функция поломки оружия*/
+	Character BreakCharacterArmor(Character ch);
 };
 

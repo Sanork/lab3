@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class Weapon 
+class Weapon
 {
 private:
 	string type;   /*Тип оружия*/

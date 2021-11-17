@@ -55,3 +55,15 @@ Character Character::Refresh(Character ch, Armor a, Weapon w)
 	ch.weap = w;
 	return ch;
 }
+
+Character Character::BreakCharacterWeapon(Character ch)
+{
+	ch.weap = ch.weap.BreakWeapon(ch.weap);
+	return ch;
+}
+
+Character Character::BreakCharacterArmor(Character ch)
+{
+	ch.arm = ch.arm.BreakArmor(ch.arm);
+	return ch;
+}

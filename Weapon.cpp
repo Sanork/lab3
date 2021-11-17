@@ -39,7 +39,6 @@ void Weapon::PrintWeapon(Weapon w)  /*Функция вывода информации об орижии*/
 
 Weapon Weapon::BreakWeapon(Weapon w)   /*Функция поломки оружия*/
 {
-	w.damage = 0;
-	//w.damage = w.damage / 10;
+	w.damage = w.damage / 10;
 	return (w);
 }
