@@ -8,62 +8,39 @@
 
 using namespace std;
 
-Character Character::InitCharacter(string characterName, int characterLVL, string characterRace, Armor arm, Weapon weap, Stats st, Resistance res) /*Создание персонажа*/
+void Character::InitCharacter(string characterName, int characterLVL, string characterRace, Armor arm, Weapon weap, Stats st, Resistance res) /*Создание персонажа*/
 {
-	Character ch;
-	ch.name = characterName;
-	ch.lvl = characterLVL;
-	ch.race = characterRace;
-	ch.arm = arm;
-	ch.weap = weap;
-	ch.stat = st;
-	return ch;
+	this->name = characterName;
+	this->lvl = characterLVL;
+	this->race = characterRace;
+	this->arm = arm;
+	this->weap = weap;
+	this->stat = st;
 }
 
-Character Character::InputCharacter(Armor a, Weapon w, Stats s, Resistance r) /*Создание персонажа вручную с консоли*/
+void Character::InputCharacter() /*Создание персонажа вручную с консоли*/
 {
-	Character ch = {};
 	cout << "Введите имя персонажа" << endl;
-	cin >> ch.name;
+	cin >> this->name;
 	cout << "Введите уровень персонажа" << endl;
-	cin >> ch.lvl;
+	cin >> this->lvl;
 	cout << "Введите расу персонажа" << endl;
-	cin >> ch.race;
-	ch.arm = a.InputArmor();
-	ch.weap = w.InputWeapon();
-	ch.stat = s.InputStats(r);
-	return ch;
+	cin >> this->race;
+	this->arm.InputArmor();
+	this->weap.InputWeapon();
+	this->stat.InputStats();
 }
 
-void Character::PrintCharacter(Character ch, Armor a, Weapon w, Stats s, Resistance r) /*Вывод информации о персонаже*/
+void Character::PrintCharacter() /*Вывод информации о персонаже*/
 {
 	cout << "Персонаж: ";
-	cout << ch.name << endl;
+	cout << this->name << endl;
 	cout << "Уровень - ";
-	cout << ch.lvl << endl;
+	cout << this->lvl << endl;
 	cout << "Раса - ";
-	cout << ch.race << endl;
-	a.PrintArmor(ch.arm);
-	w.PrintWeapon(ch.weap);
-	s.PrintStats(ch.stat, r);
+	cout << this->race << endl;
+	this->arm.PrintArmor();
+	this->weap.PrintWeapon();
+	this->stat.PrintStats();
 }
 
-Character Character::Refresh(Character ch, Armor a, Weapon w)
-{
-
-	ch.arm = a;
-	ch.weap = w;
-	return ch;
-}
-
-Character Character::BreakCharacterWeapon(Character ch)
-{
-	ch.weap = ch.weap.BreakWeapon(ch.weap);
-	return ch;
-}
-
-Character Character::BreakCharacterArmor(Character ch)
-{
-	ch.arm = ch.arm.BreakArmor(ch.arm);
-	return ch;
-}

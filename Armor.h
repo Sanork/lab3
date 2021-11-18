@@ -5,8 +5,7 @@
 
 using namespace std;
 
-class Armor//:
-	//private Character
+class Armor
 {
 private:
 	string material;  /*Материал брони*/
@@ -14,9 +13,8 @@ private:
 	string w_class;    /*Класс брони*/
 	int defense;   /*Защита брони*/
 public:
-	Armor InitArmor(string armorMaterial, int armorWeight, string armorClass, int armorDefence); /*Функция создания брони*/
-	Armor InputArmor(); /*Функция создания брони вручную с консоли*/
-	void PrintArmor(Armor ar); /*Функция вывода информации о броне*/
-	Armor BreakArmor(Armor ar); /*Функция поломки брони*/
+	void InitArmor(string armorMaterial, int armorWeight, string armorClass, int armorDefence); /*Функция создания брони*/
+	void InputArmor(); /*Функция создания брони вручную с консоли*/
+	void PrintArmor(); /*Функция вывода информации о броне*/
 };
 

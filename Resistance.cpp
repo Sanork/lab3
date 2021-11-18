@@ -5,33 +5,29 @@
 
 using namespace std;
 
-Resistance Resistance::InitResistance(int resistancePoison, int resistanceFire, int resistanceFrost)   /*Создание*/
+void Resistance::InitResistance(int resistancePoison, int resistanceFire, int resistanceFrost)   /*Создание*/
 {
-	Resistance r;
-	r.poison_res = resistancePoison;
-	r.fire_res = resistancePoison;
-	r.frost_res = resistanceFrost;
-	return r;
+	this->poison_res = resistancePoison;
+	this->fire_res = resistancePoison;
+	this->frost_res = resistanceFrost;
 }
 
-Resistance Resistance::InputResistance()   /*Создание вручную*/
+void Resistance::InputResistance()   /*Создание вручную*/
 {
-	Resistance r = {};
 	cout << "Введите сопротивление яду" << endl;
-	cin >> r.poison_res;
+	cin >> this->poison_res;
 	cout << "Введите сопротивление огню" << endl;
-	cin >> r.fire_res;
+	cin >> this->fire_res;
 	cout << "Введите сопротивление холоду" << endl;
-	cin >> r.frost_res;
-	return r;
+	cin >> this->frost_res;
 }
 
-void Resistance::PrintResistance(Resistance r)  /*Вывод информации*/
+void Resistance::PrintResistance()  /*Вывод информации*/
 {
 	cout << "Сопротивление яду - ";
-	cout << r.poison_res << "%" << endl;
+	cout << this->poison_res << "%" << endl;
 	cout << "Сопротивление огню - ";
-	cout << r.fire_res << "%" << endl;
+	cout << this->fire_res << "%" << endl;
 	cout << "Сопротивление холоду - ";
-	cout << r.frost_res << "%" << endl;
+	cout << this->frost_res << "%" << endl;
 }

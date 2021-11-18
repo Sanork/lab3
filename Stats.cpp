@@ -6,47 +6,43 @@
 
 using namespace std;
 
-Stats Stats::InitStats(int statAtack, int statAgility, int statDurability, int statHP, int statEnergy, Resistance res) /*Содание*/
+void Stats::InitStats(int statAtack, int statAgility, int statDurability, int statHP, int statEnergy, Resistance res) /*Содание*/
 {
-	Stats s;
-	s.res = res; //InitResistance(a1, b1, c1);
-	s.atack = statAtack;
-	s.agility = statAgility;
-	s.durability = statDurability;
-	s.hp = statHP;
-	s.energy = statEnergy;
-	return s;
+	this->res = res; 
+	this->atack = statAtack;
+	this->agility = statAgility;
+	this->durability = statDurability;
+	this->hp = statHP;
+	this->energy = statEnergy;
 }
 
-Stats Stats::InputStats(Resistance r) /*Создание вручную*/
+void Stats::InputStats() /*Создание вручную*/
 {
-	Stats s = {};
 	cout << "Введите показатель атаки" << endl;
-	cin >> s.atack;
+	cin >> this->atack;
 	cout << "Введите показатель ловкости" << endl;
-	cin >> s.agility;
+	cin >> this->agility;
 	cout << "Введите показатель стойкости" << endl;
-	cin >> s.durability;
+	cin >> this->durability;
 	cout << "Введите количество очков здоровья" << endl;
-	cin >> s.hp;
+	cin >> this->hp;
 	cout << "Введите количество очков энергии" << endl;
-	cin >> s.energy;
-	s.res = r.InputResistance();
-	return s;
+	cin >> this->energy;
+	this->res.InputResistance();
 }
 
-void Stats::PrintStats(Stats s, Resistance r) /*Вывод информации*/
+void Stats::PrintStats() /*Вывод информации*/
 {
 	cout << endl << "Характеристики:" << endl;
 	cout << "Атака - ";
-	cout << s.atack << endl;
+	cout << this->atack << endl;
 	cout << "Ловкость - ";
-	cout << s.agility << endl;
+	cout << this->agility << endl;
 	cout << "Стойкость - ";
-	cout << s.durability << endl;
+	cout << this->durability << endl;
 	cout << "Здоровье - ";
-	cout << s.hp << endl;
+	cout << this->hp << endl;
 	cout << "Энергия - ";
-	cout << s.energy << endl;
-	r.PrintResistance(s.res);
+	cout << this->energy << endl;
+	this->res.PrintResistance();
 }

@@ -11,9 +11,8 @@ private:
 	int weight;    /*Вес оружия*/
 	int damage;    /*Урон оружия*/
 public:
-	Weapon InitWeapon(string weaponType, int weaponWeight, int weaponDamage);  /*Функция создания оружия*/
-	Weapon InputWeapon();  /*Функция создания оружия вручную с консоли*/
-	void PrintWeapon(Weapon w); /*Функция вывода информации об оружии*/
-	Weapon BreakWeapon(Weapon w);  /*Функция поломки оружия*/
+	void InitWeapon(string weaponType, int weaponWeight, int weaponDamage);  /*Функция создания оружия*/
+	void InputWeapon();  /*Функция создания оружия вручную с консоли*/
+	void PrintWeapon(); /*Функция вывода информации об оружии*/
 };
 
